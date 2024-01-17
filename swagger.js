@@ -8,7 +8,7 @@ const doc = {
         title: 'Online Apotheke',
         description: 'This API is designed to sell medicines online.'
     },
-    host: 'http://localhost:5000',
+    host: 'https://online-apotheke-v1-api.onrender.com',
     securityDefinitions: {
         JWT: {
             type: 'apiKey',

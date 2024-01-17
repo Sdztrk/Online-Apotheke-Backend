@@ -5,7 +5,7 @@
     "description": "This API is designed to sell medicines online.",
     "version": "1.0.0"
   },
-  "host": "http://localhost:5000",
+  "host": "https://online-apotheke-v1-api.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"

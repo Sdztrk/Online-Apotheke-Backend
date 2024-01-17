@@ -69,7 +69,7 @@ app.get('/', (req, res) => {
         message: 'Welcome to Online Apotheke API',
         api: {
             documents: {
-                swagger: `http://localhost:5000/docs/swagger`,
+                swagger: `https://online-apotheke-v1-api.onrender.com/docs/swagger`,
             },
             contact: 'msaidozturk1@gmail.com'
         },
