@@ -29,9 +29,8 @@ app.use(express.json())   //req.body
 app.use(cors({
     credentials: true,
  }))
-// logger 
-app.use(require('./middlewares/logger'))
-// set static folder 
+
+ // set static folder 
 app.use(express.static(path.join(__dirname, 'public')))
 // Express Error Handler 
 app.use(require('./middlewares/errorHandler'));
