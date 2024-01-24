@@ -1,7 +1,5 @@
 "use strict"
 
-
-
 const router = require('express').Router()
 const ctrl = require('../controllers/profile');
 const { protect, isAdminOrOwner } = require('../middlewares/auth');
@@ -36,7 +34,7 @@ router.route('/')
 , ctrl.create)
 
 router.route('/:id')
-.get(
+.get(isAdminOrOwner(Profile,'userId'),
     
     /*
             #swagger.tags = ["Profile"]
@@ -45,14 +43,14 @@ router.route('/:id')
     
     ctrl.read)
 
-.put(isAdminOrOwner(Profile, 
+.put(isAdminOrOwner(Profile,'userId'),
     
     /*
             #swagger.tags = ["Profile"]
             #swagger.summary = "Update Profile"
         */
     
-    'userId'), upload.single('image'), ctrl.update)
+     upload.single('image'), ctrl.update)
     
 .delete(isAdminOrOwner(Profile, 'userId'),
 /*

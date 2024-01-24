@@ -4,7 +4,8 @@ const ErrorResponse = require('../utils/ErrorResponse')
 
 // @URL     GET /api/profile/:id
 exports.read = async(req, res)=>{
-    const data = await Model.findById(req.params.id).populate('userId')
+    //const data = await Model.findById(req.params.id).populate('userId')
+      const data = await Model.findById(req.params.id).populate('userId');
     res.status(200).json({success: true, data})
     
 }

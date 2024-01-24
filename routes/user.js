@@ -44,7 +44,7 @@ router.route('/')
     ctrl.create)
 
 router.route('/:id')
-.get(
+.get(protect,
     
     /*
             #swagger.tags = ["Users"]
@@ -52,7 +52,7 @@ router.route('/:id')
             */
     
     ctrl.read)
-.put(
+.put(protect,
     
     /*
             #swagger.tags = ["Users"]

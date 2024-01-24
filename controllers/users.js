@@ -1,4 +1,6 @@
 const Model = require('../models/user')
+const ProfileModel = require('../models/profile');
+
 
 
 // @URL     GET /api/users
@@ -7,11 +9,18 @@ exports.list = async(req, res)=>{
 }
 
 // @URL     GET /api/users/:id
-exports.read = async(req, res)=>{
-    const data = await Model.findById(req.params.id)
-    res.status(200).json({success: true, data})
-    
-}
+exports.read = async (req, res) => {
+    const userData = await Model.findById(req.params.id);
+  
+    if (!userData) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+  
+    // Populating the 'profile' field from the 'Profile' model
+    const userProfile = await ProfileModel.findOne({ userId: userData._id });
+
+    res.status(200).json({ success: true, data: userData, profile:userProfile });
+  };
 
 // @URL     POST /api/users
 exports.create = async(req, res)=>{
