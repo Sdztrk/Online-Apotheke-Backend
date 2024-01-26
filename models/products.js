@@ -1,7 +1,6 @@
 "use strict"
 
 
-
 const { Schema,model } = require('mongoose');
 
 const ProductSchema = new Schema({
@@ -38,17 +37,38 @@ const ProductSchema = new Schema({
                 // Check if the value is one of the allowed enum values
                 return ['Tablet', 'Liquid'].includes(value);
             },
-            message: 'Invalid size value. Please choose either Tablet or Liquid.'
+            message: 'Invalid value. Please choose either Tablet or Liquid.'
         }
     },
     packageSize: {
         type: String,
         trim:true,
     },
+    illness: {
+        type: String,
+        required:true,
+        enum: ['Rachen', 'Schlafen', 'Stress', 'Herz', 'Magen', 'Schnupfen', 'Pflege', 'Schmerz', 'Husten'],
+        validate: {
+            validator: function(value) {
+                // Check if the value is one of the allowed enum values
+                return ['Rachen', 'Schlafen', 'Stress', 'Herz', 'Magen', 'Schnupfen', 'Pflege', 'Schmerz', 'Husten'].includes(value);
+            },
+            message: 'Invalid value. Please choose either Tablet or Liquid.'
+        }
+    },
     manufacturerCountry: {
         type: String,
         trim:true,
     },
+    type: {
+        type: String,
+        trim:true,
+    },
+    discount: {
+        type: Boolean,
+        default:false,
+    },
+    
     activeIngredient: {
         type: String,
         trim:true,
@@ -67,6 +87,7 @@ const ProductSchema = new Schema({
     },
     price: {
         type: Number,
+        required:true,
     },
     expirationDate: {
         type: String,
@@ -75,6 +96,11 @@ const ProductSchema = new Schema({
     applicationMethod: {
         type: String,
         trim:true,
+    },
+    description: {
+        type: String,
+        trim:true,
+        required:true,
     },
 });
 
