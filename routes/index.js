@@ -15,4 +15,6 @@ router.use('/profile', require('./profile'));
 // route    /api/product
 router.use('/product', require('./product'));
 
+router.use("/", require("./stripe"))
+
 module.exports = router

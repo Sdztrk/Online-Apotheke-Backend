@@ -3,7 +3,7 @@ const PharmaceuticalProduct = require('../models/products');
 // @URL     GET /api/products
 exports.list = async (req, res) => {
   const products = await PharmaceuticalProduct.find();
-  res.status(200).json({ success: true, data: products });
+  res.status(200).json({ success: true, count: products.length, data: products });
 };
 
 // @URL     GET /api/products/:id
