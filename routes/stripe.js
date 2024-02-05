@@ -6,7 +6,6 @@ const successUrl = "http://localhost:3000/PaymentSuccess";  // Remove the initia
 const cancelUrl = "http://localhost:3000/PaymentFailed";  // Remove the initial encoding
 
 
-
 router.post("/create-checkout-session", async (req, res) => {
     try {
         const { products } = req.body;

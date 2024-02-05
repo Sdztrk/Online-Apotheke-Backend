@@ -12,7 +12,6 @@ const swaggerJson = require("./swagger.json")
 const redoc = require("redoc-express")
 
 
-
 // Configurations
 const PORT = process.env.PORT || 8080;
 const HOST  =process.env.HOST || 'localhost';
@@ -21,6 +20,7 @@ const MODE = process.env.MODE || 'production';
 
 // Connect to DB
 require('./config/connectDB')()
+
 
 // Middlewares 
 // Parse JSON 
