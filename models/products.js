@@ -21,6 +21,7 @@ const ProductSchema = new Schema({
     },
     pzn: {
         type: Number,
+        trim:true,
         required: true,
     },
     image: {
@@ -67,6 +68,7 @@ const ProductSchema = new Schema({
     discount: {
         type: Boolean,
         default:false,
+        trim:true,
     },
     
     activeIngredient: {
@@ -88,6 +90,7 @@ const ProductSchema = new Schema({
     price: {
         type: Number,
         required:true,
+        trim:true,
     },
     expirationDate: {
         type: String,
