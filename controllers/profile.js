@@ -28,6 +28,7 @@ exports.create = async(req, res)=>{
     const data = await Model.create(req.body)
     res.status(201).json({success: true, data})
 }
+
 // @URL     PUT /api/profile/:id
 exports.update = async(req, res)=>{
         // add the image to the req.body

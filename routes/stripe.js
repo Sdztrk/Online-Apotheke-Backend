@@ -2,8 +2,8 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET);
 const router = require('express').Router();
 
 
-const successUrl = "http://localhost:3000/PaymentSuccess";  // Remove the initial encoding
-const cancelUrl = "http://localhost:3000/PaymentFailed";  // Remove the initial encoding
+const successUrl = "https://online-apotheke-v1-api.onrender.com/PaymentSuccess";  // Remove the initial encoding
+const cancelUrl = "https://online-apotheke-v1-api.onrender.com/PaymentFailed";  // Remove the initial encoding
 
 
 router.post("/create-checkout-session", async (req, res) => {
