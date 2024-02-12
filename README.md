@@ -14,7 +14,6 @@ Online-Apotheke ist einer vollständig responsiven Website, die es Benutzern erm
 
 
 ## API-Dokumentation
-Die API-Dokumentation kann über die Swagger UI aufgerufen werden. Starte den Server und besuche `http://localhost:3000/api-docs` in deinem Browser, um die API-Dokumentation anzuzeigen.
 
 ## ERD
 ![ERD](./utils/image/ERD.png)
