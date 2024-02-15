@@ -54,7 +54,7 @@ const ProductSchema = new Schema({
                 // Check if the value is one of the allowed enum values
                 return ['Rachen', 'Schlafen', 'Stress', 'Herz', 'Magen', 'Schnupfen', 'Pflege', 'Schmerz', 'Husten'].includes(value);
             },
-            message: 'Invalid value. Please choose either Tablet or Liquid.'
+            message: 'Invalid value. Please choose one of them Rachen, Schlafen, Stress, Herz, Magen, Schnupfen, Pflege, Schmerz, Husten.'
         }
     },
     manufacturerCountry: {

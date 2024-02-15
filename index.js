@@ -24,7 +24,10 @@ require('./config/connectDB')()
 
 // Middlewares 
 // Parse JSON 
-app.use(express.json())   //req.body 
+// Parse JSON bodies (up to 50 megabytes)
+app.use(express.json({ limit: '50mb' }));
+// Parse URL-encoded bodies (up to 50 megabytes)
+app.use(express.urlencoded({ limit: '50mb', extended: true, parameterLimit: 50000 }));
 // Enable CORS
 app.use(cors({
     credentials: true,
