@@ -64,7 +64,7 @@ router.route('/:id')
             */
     
     ctrl.read)
-  .put(
+  .put(protect,authorize('admin'),
     
     /*
             #swagger.tags = ["Product"]
