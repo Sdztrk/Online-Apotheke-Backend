@@ -25,12 +25,12 @@ exports.read = async (req, res) => {
 // @URL     POST /api/users
 exports.create = async(req, res)=>{
     const data = await Model.create(req.body)
-    res.status(201).json({success: true, data})
+    res.status(201).json({success: true, data:data})
 }
 // @URL     PUT /api/users/:id
 exports.update = async(req, res)=>{
     const data = await Model.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true})
-    res.status(202).json({success: true, data})  
+    res.status(202).json({success: true, data:data})  
 }
 
 // @URL     DELETE /api/users/:id
