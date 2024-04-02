@@ -45,19 +45,6 @@ app.use('/api/v1', require('./routes'))
 app.use("/docs/swagger", swaggerUI.serve, swaggerUI.setup(swaggerJson))
 
 
-//route for redoc:
-app.use("/docs/redoc", redoc({
-    spaceUrl:"docs/json",
-    title:"API Docs"
-}))
-
-
-//route for swagger.json
-app.use("/docs/json", (req,res)=> {
-    res.sendFile("swagger.json", {root:"."})
-})
-
-
 
 app.get('/', (req, res) => {
     /*
