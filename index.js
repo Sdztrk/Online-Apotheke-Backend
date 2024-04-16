@@ -33,8 +33,6 @@ app.use(cors({
     credentials: true,
  }))
 
- // set static folder 
-app.use(express.static(path.join(__dirname, 'public')))
 // Express Error Handler 
 app.use(require('./middlewares/errorHandler'));
 
